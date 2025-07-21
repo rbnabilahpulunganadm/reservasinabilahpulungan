@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klinik Nabilah Pulungan Mom and Baby Spa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/css/lightgallery.min.css">
+    <style>
+        :root {
+            --primary-color: #27ae60;
+            --primary-light: #2ecc71;
+            --primary-dark: #219653;
+            --secondary-color: #f39c12;
+            --accent-color: #e74c3c;
+            --light-color: #f5f6fa;
+            --dark-color: #2d3436;
+            --text-color: #34495e;
+            --gray-light: #ecf0f1;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .header-scrolled {
+            padding: 10px 0;
+            background: rgba(39, 174, 96, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo img {
+            height: 50px;
+            /*border-radius: 50%;*/
+            border: 2px solid white;
+        }
+        
+        .logo-text h1 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 3px;
+        }
+        
+        .logo-text p {
+            font-size: 12px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            margin-top: 80px;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('slide.png') no-repeat center center/cover;
+            color: white;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+        
+        .hero h2 {
+            font-size: clamp(32px, 5vw, 52px);
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: clamp(16px, 2vw, 20px);
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        /* Button Styles */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 30px;
+            background-color: var(--secondary-color);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3);
+            gap: 8px;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(243, 156, 18, 0.4);
+            background-color: #f1c40f;
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            box-shadow: none;
+        }
+        
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary-color);
+        }
+        
+        .btn i {
+            font-size: 16px;
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: clamp(28px, 4vw, 36px);
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+        
+        .section-title p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 16px;
+        }
+        
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            padding: 30px 25px;
+            border-bottom: 4px solid var(--primary-light);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 28px;
+            box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3);
+        }
+        
+        .service-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+        
+        .service-card p {
+            color: #666;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        
+        /* Gallery Section */
+        .gallery {
+            background-color: var(--gray-light);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            aspect-ratio: 1/1;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+            color: white;
+            padding: 15px;
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover .gallery-caption {
+            opacity: 1;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            background: linear-gradient(rgba(39, 174, 96, 0.9), rgba(39, 174, 96, 0.9)), url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            color: white;
+        }
+        
+        .testimonials .section-title h2,
+        .testimonials .section-title p {
+            color: white;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            border-radius: 12px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+            border: 3px solid white;
+        }
+        
+        .testimonial-author h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        
+        .testimonial-author p {
+            opacity: 0.8;
+            font-size: 14px;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .testimonial-text::before {
+            content: '"';
+            position: absolute;
+            left: 0;
+            top: -10px;
+            font-size: 50px;
+            opacity: 0.2;
+            font-family: serif;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--secondary-color);
+        }
+        
+        .footer-column p {
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+        
+        .contact-info {
+            list-style: none;
+        }
+        
+        .contact-info li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--secondary-color);
+            font-size: 18px;
+            margin-top: 3px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+        
+        .quick-links {
+            list-style: none;
+        }
+        
+        .quick-links li {
+            margin-bottom: 12px;
+        }
+        
+        .quick-links a {
+            color: white;
+            opacity: 0.8;
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .quick-links a:hover {
+            opacity: 1;
+            color: var(--secondary-color);
+            transform: translateX(5px);
+        }
+        
+        .quick-links i {
+            font-size: 12px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+            font-size: 14px;
+        }
+        
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+            z-index: 100;
+            transition: var(--transition);
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            
+            .logo {
+                justify-content: center;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .hero {
+                text-align: center;
+                margin-top: 120px;
+            }
+            
+            .hero-content {
+                margin: 0 auto;
+            }
+            
+            .btn-group {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+        }
+        
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="logo.jpg" alt="Logo Klinik Nabilah Pulungan">
+                    <div class="logo-text">
+                        <h1>Klinik RB Nabilah Pulungan</h1>
+                        <p>Mom and Baby Spa</p>
+                    </div>
+                </div>
+                <nav>
+                    <a href="#contact" class="btn btn-outline">
+                        <i class="fas fa-phone-alt"></i> Hubungi Kami
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h2>Perawatan Eksklusif untuk Ibu dan Bayi</h2>
+                <p>Memberikan pelayanan profesional dengan sentuhan kasih sayang untuk kesehatan dan kenyamanan ibu dan bayi Anda.</p>
+                <div class="btn-group" style="display: flex; gap: 15px; margin-top: 30px;">
+                    <a href="#services" class="btn">
+                        <i class="fas fa-spa"></i> Layanan Kami
+                    </a>
+                    <a href="#gallery" class="btn btn-outline">
+                        <i class="fas fa-images"></i> Galeri Kami
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Layanan Profesional Kami</h2>
+                <p>Pilih layanan yang Anda butuhkan dan daftar melalui formulir online kami</p>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card fade-in delay-1">
+                    <div class="service-icon">
+                        <i class="fas fa-baby"></i>
+                    </div>
+                    <h3>Baby & Kid Spa</h3>
+                    <p>Berbagai macam treatment untuk stimulasi perkembangan motorik bayi melalui terapi air, pijat profesional dan lainnya oleh ahli kami.</p>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdADKvF9VdCcZABPUzZp3noc6yxKHfwZwhI5F8scsuJydrrWQ/viewform?usp=header" class="btn" target="_blank">
+                        <i class="fas fa-edit"></i> Daftar Sekarang
+                    </a>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card fade-in delay-1">
+                    <div class="service-icon">
+                        <i class="fas fa-female"></i>
+                    </div>
+                    <h3>Mom & Ladies Spa</h3>
+                    <p>Perawatan khusus untuk bunda dan anty sekalian baik yang sedang hamil atau bukan, termasuk pijat, perawatan kulit, konsultasi kehamilan laktasi dan lainnya.</p>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSf-rg69KzV91RrVESDWzqWVn-0WXD8rjHKIkcgl_jtso-qLKw/viewform?usp=header" class="btn" target="_blank">
+                        <i class="fas fa-edit"></i> Daftar Sekarang
+                    </a>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card fade-in delay-2">
+                    <div class="service-icon">
+                        <i class="fas fa-child"></i>
+                    </div>
+                    <h3>Registrasi ANC</h3>
+                    <p>Program layanan persalinan khusus untuk membantu ibu melahirkan dengan aman dan nyaman.</p>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfM5XjdlzrtGLxqllks3se-PSVcT54vvHcyAs7LuMQ3IgxqBA/viewform?usp=header" class="btn" target="_blank">
+                        <i class="fas fa-edit"></i> Daftar Sekarang
+                    </a>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card fade-in delay-2">
+                    <div class="service-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>Senam Sehat</h3>
+                    <p>Layanan khusus untuk mengembalikan kebugaran tubuh bunda dan kakak-kakak sekalian, rekomendasi untuk persiapan melahirkan.</p>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSemf8abYiltVvOnsoyznXR_m4Lk0Ez8NNOVYz_HT4zlGunKHw/viewform?usp=header" class="btn" target="_blank">
+                        <i class="fas fa-edit"></i> Daftar Sekarang
+                    </a>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card fade-in delay-3">
+                    <div class="service-icon">
+                        <i class="fas fa-bath"></i>
+                    </div>
+                    <h3>Spesial Event</h3>
+                    <p>Nantikan berbagai event promo kami seperti jum'at berkah.</p>
+                    <a href="https://docs.google.com/forms/" class="btn" target="_blank">
+                        <i class="fas fa-edit"></i> Daftar Sekarang
+                    </a>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="service-card fade-in delay-3">
+                    <div class="service-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h3>Home Care</h3>
+                    <p>Terapis kami akan datang ke rumah anda, melakukan treatment(saat ini layanan baru tersedia untuk daerah padangsidimpuan).</p>
+                    <a href="https://docs.google.com/forms/" class="btn" target="_blank">
+                        <i class="fas fa-edit"></i> Daftar Sekarang
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Galeri Klinik Kami</h2>
+                <p>Momen-momen indah bersama para ibu dan bayi di klinik kami</p>
+            </div>
+            
+            <div class="gallery-grid">
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item fade-in delay-1">
+                    <img src="1.jpeg" alt="Baby Spa">
+                    <div class="gallery-caption">
+                        <h4>Mom & Baby Treatment</h4>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item fade-in delay-1">
+                    <img src="2.jpeg" alt="Prenatal Massage">
+                    <div class="gallery-caption">
+                        <h4>Mom & Baby Treatment</h4>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item fade-in delay-2">
+                    <img src="3.jpeg" alt="Baby Swimming">
+                    <div class="gallery-caption">
+                        <h4>Mom & Baby Treatment</h4>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 4 -->
+                <div class="gallery-item fade-in delay-2">
+                    <img src="4.jpeg" alt="Laktasi Konseling">
+                    <div class="gallery-caption">
+                        <h4>Mom & Baby Treatment</h4>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 5 -->
+                <div class="gallery-item fade-in delay-3">
+                    <img src="5.jpeg" alt="Baby Massage">
+                    <div class="gallery-caption">
+                        <h4>Mom & Baby Treatment</h4>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 6 -->
+                <div class="gallery-item fade-in delay-3">
+                    <img src="6.jpeg" alt="Facility">
+                    <div class="gallery-caption">
+                        <h4>Mom & Baby Treatment</h4>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 7 -->
+                <div class="gallery-item fade-in delay-3">
+                    <img src="7.jpeg" alt="Facility">
+                    <div class="gallery-caption">
+                        <h4>Mom & Baby Treatment</h4>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 8 -->
+                <div class="gallery-item fade-in delay-3">
+                    <img src="8.jpeg" alt="Facility">
+                    <div class="gallery-caption">
+                        <h4>Mom & Baby Treatment</h4>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 9 -->
+                <div class="gallery-item fade-in delay-3">
+                    <img src="9.jpeg" alt="Facility">
+                    <div class="gallery-caption">
+                        <h4>Mom & Baby Treatment</h4>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 10 -->
+                <div class="gallery-item fade-in delay-3">
+                    <img src="10.jpeg" alt="Facility">
+                    <div class="gallery-caption">
+                        <h4>Mom & Baby Treatment</h4>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 11 -->
+                <div class="gallery-item fade-in delay-3">
+                    <img src="11.jpeg" alt="Facility">
+                    <div class="gallery-caption">
+                        <h4>Mom & Baby Treatment</h4>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 12 -->
+                <div class="gallery-item fade-in delay-3">
+                    <img src="12.jpeg" alt="Facility">
+                    <div class="gallery-caption">
+                        <h4>Mom & Baby Treatment</h4>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 13 -->
+                <div class="gallery-item fade-in delay-3">
+                    <img src="13.jpeg" alt="Facility">
+                    <div class="gallery-caption">
+                        <h4>Mom & Baby Treatment</h4>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 14 -->
+                <div class="gallery-item fade-in delay-3">
+                    <img src="14.jpeg" alt="Facility">
+                    <div class="gallery-caption">
+                        <h4>Mom & Baby Treatment</h4>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 15 -->
+                <div class="gallery-item fade-in delay-3">
+                    <img src="15.jpeg" alt="Facility">
+                    <div class="gallery-caption">
+                        <h4>Mom & Baby Treatment</h4>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 16 -->
+                <div class="gallery-item fade-in delay-3">
+                    <img src="16.jpeg" alt="Facility">
+                    <div class="gallery-caption">
+                        <h4>Mom & Baby Treatment</h4>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 17 -->
+                <div class="gallery-item fade-in delay-3">
+                    <img src="17.jpeg" alt="Facility">
+                    <div class="gallery-caption">
+                        <h4>Mom & Baby Treatment</h4>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 18 -->
+                <div class="gallery-item fade-in delay-3">
+                    <img src="18.jpeg" alt="Facility">
+                    <div class="gallery-caption">
+                        <h4>Mom & Baby Treatment</h4>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 19 -->
+                <div class="gallery-item fade-in delay-3">
+                    <img src="19.jpeg" alt="Facility">
+                    <div class="gallery-caption">
+                        <h4>Mom & Baby Treatment</h4>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 20 -->
+                <div class="gallery-item fade-in delay-3">
+                    <img src="20.jpeg" alt="Facility">
+                    <div class="gallery-caption">
+                        <h4>Mom & Baby Treatment</h4>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 21 -->
+                <div class="gallery-item fade-in delay-3">
+                    <img src="21.jpeg" alt="Facility">
+                    <div class="gallery-caption">
+                        <h4>Mom & Baby Treatment</h4>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 22 -->
+                <div class="gallery-item fade-in delay-3">
+                    <img src="22.jpeg" alt="Facility">
+                    <div class="gallery-caption">
+                        <h4>Mom & Baby Treatment</h4>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 23 -->
+                <div class="gallery-item fade-in delay-3">
+                    <img src="23.jpeg" alt="Facility">
+                    <div class="gallery-caption">
+                        <h4>Mom & Baby Treatment</h4>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 24 -->
+                <div class="gallery-item fade-in delay-3">
+                    <img src="24.jpeg" alt="Facility">
+                    <div class="gallery-caption">
+                        <h4>Mom & Baby Treatment</h4>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 25 -->
+                <div class="gallery-item fade-in delay-3">
+                    <img src="25.jpeg" alt="Facility">
+                    <div class="gallery-caption">
+                        <h4>Mom & Baby Treatment</h4>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 26 -->
+                <div class="gallery-item fade-in delay-3">
+                    <img src="26.jpeg" alt="Facility">
+                    <div class="gallery-caption">
+                        <h4>Mom & Baby Treatment</h4>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 27 -->
+                <div class="gallery-item fade-in delay-3">
+                    <img src="27.jpeg" alt="Facility">
+                    <div class="gallery-caption">
+                        <h4>Mom & Baby Treatment</h4>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 28 -->
+                <div class="gallery-item fade-in delay-3">
+                    <img src="28.jpeg" alt="Facility">
+                    <div class="gallery-caption">
+                        <h4>Mom & Baby Treatment</h4>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 29 -->
+                <div class="gallery-item fade-in delay-3">
+                    <img src="29.jpeg" alt="Facility">
+                    <div class="gallery-caption">
+                        <h4>Mom & Baby Treatment</h4>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 30 -->
+                <div class="gallery-item fade-in delay-3">
+                    <img src="30.jpeg" alt="Facility">
+                    <div class="gallery-caption">
+                        <h4>Mom & Baby Treatment</h4>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 31 -->
+                <div class="gallery-item fade-in delay-1">
+                    <img src="31.jpeg" alt="Baby Spa">
+                    <div class="gallery-caption">
+                        <h4>Mom & Baby Treatment</h4>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 32 -->
+                <div class="gallery-item fade-in delay-1">
+                    <img src="32.jpeg" alt="Prenatal Massage">
+                    <div class="gallery-caption">
+                        <h4>Mom & Baby Treatment</h4>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 33 -->
+                <div class="gallery-item fade-in delay-2">
+                    <img src="33.jpeg" alt="Baby Swimming">
+                    <div class="gallery-caption">
+                        <h4>Mom & Baby Treatment</h4>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 34 -->
+                <div class="gallery-item fade-in delay-2">
+                    <img src="34.jpeg" alt="Laktasi Konseling">
+                    <div class="gallery-caption">
+                        <h4>Mom & Baby Treatment</h4>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 35 -->
+                <div class="gallery-item fade-in delay-3">
+                    <img src="35.jpeg" alt="Baby Massage">
+                    <div class="gallery-caption">
+                        <h4>Mom & Baby Treatment</h4>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 36 -->
+                <div class="gallery-item fade-in delay-3">
+                    <img src="36.jpeg" alt="Facility">
+                    <div class="gallery-caption">
+                        <h4>Mom & Baby Treatment</h4>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 37 -->
+                <div class="gallery-item fade-in delay-3">
+                    <img src="37.jpeg" alt="Facility">
+                    <div class="gallery-caption">
+                        <h4>Mom & Baby Treatment</h4>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 38 -->
+                <div class="gallery-item fade-in delay-3">
+                    <img src="38.jpeg" alt="Facility">
+                    <div class="gallery-caption">
+                        <h4>Mom & Baby Treatment</h4>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 39 -->
+                <div class="gallery-item fade-in delay-3">
+                    <img src="39.jpeg" alt="Facility">
+                    <div class="gallery-caption">
+                        <h4>Mom & Baby Treatment</h4>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 40 -->
+                <div class="gallery-item fade-in delay-3">
+                    <img src="40.jpeg" alt="Facility">
+                    <div class="gallery-caption">
+                        <h4>Mom & Baby Treatment</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Apa Kata Mereka?</h2>
+                <p>Testimoni dari para ibu yang telah merasakan layanan kami</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card fade-in delay-1">
+                    <div class="testimonial-header">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah" class="testimonial-avatar">
+                        <div class="testimonial-author">
+                            <h4>Sarah Wijaya</h4>
+                            <p>Ibu dari Baby Kaila</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-text">
+                        "Baby spa di klinik Nabilah sangat profesional. Setelah treatment, bayi saya tidur lebih nyenyak dan nafsu makannya meningkat. Terima kasih!"
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card fade-in delay-2">
+                    <div class="testimonial-header">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Dewi" class="testimonial-avatar">
+                        <div class="testimonial-author">
+                            <h4>Dewi Anggraeni</h4>
+                            <p>Ibu Hamil 7 Bulan</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-text">
+                        "Prenatal massage-nya sangat membantu meredakan pegal-pegal selama kehamilan. Terapisnya sangat mengerti kebutuhan ibu hamil."
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card fade-in delay-3">
+                    <div class="testimonial-header">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Rina" class="testimonial-avatar">
+                        <div class="testimonial-author">
+                            <h4>Rina Marlina</h4>
+                            <p>Ibu dari Baby Aruna</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-text">
+                        "Konsultasi laktasi sangat membantu masalah ASI saya. Sekarang saya bisa menyusui dengan lancar berkat saran dari konsultan di sini."
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column fade-in">
+                    <h3>Tentang Kami</h3>
+                    <p>Klinik Nabilah Pulungan Mom and Baby Spa merupakan pusat perawatan profesional untuk ibu dan bayi dengan standar higienis tertinggi dan pelayanan penuh kasih sayang.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column fade-in delay-1">
+                    <h3>Kontak Kami</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Jl. Kemuning No.1 Kelurahan Ujung Padang, Kecamatan Padangsidimpuan Selatan, Kota Padangsidimpuan, Sumatera Utara</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <span>(061) 1234567</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>+62 813-6738-8844 (WhatsApp)</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>nabilahpulungan.spa@gmail.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Buka Setiap Hari: 08.00 - 22.00 WIB</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column fade-in delay-2">
+                    <h3>Link Cepat</h3>
+                    <ul class="quick-links">
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Layanan Kami</a></li>
+                        <li><a href="#gallery"><i class="fas fa-chevron-right"></i> Galeri</a></li>
+                        <li><a href="https://sites.google.com/view/nabilahpulunganshop/" target="_blank"><i class="fas fa-chevron-right"></i> Pendaftaran Online</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Artikel Perawatan</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright fade-in delay-3">
+                <p>&copy; 2025 Klinik Nabilah Pulungan Mom and Baby Spa. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/6281367388844" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    
+    <script>
+        // Header Scroll Effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+        
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Animation on Scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.fade-in');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>
