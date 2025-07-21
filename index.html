@@ -1122,8 +1122,22 @@
     <a href="https://wa.me/6281367388844" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
+
+    <!-- Elemen audio dengan autoplay dan loop -->
+    <audio controls autoplay loop>
+        <source src="MIU-CLIPS_絆(KIZUNA).ogg" type="audio/ogg">
+        Browser Anda tidak mendukung elemen audio.
+    </audio>
     
     <script>
+        // Script tambahan untuk memastikan autoplay bekerja di semua browser
+        document.addEventListener('DOMContentLoaded', function() {
+            var audio = document.querySelector('audio');
+            audio.play().catch(e => {
+                console.log("Autoplay diblokir oleh browser. Silakan interaksi dengan halaman untuk memutar musik.");
+            });
+        });
+        
         // Header Scroll Effect
         window.addEventListener('scroll', function() {
             const header = document.getElementById('header');
