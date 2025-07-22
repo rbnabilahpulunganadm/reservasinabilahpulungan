@@ -1143,6 +1143,12 @@
                 console.log("Autoplay diblokir oleh browser. Silakan interaksi dengan halaman untuk memutar musik.");
             });
         });
+
+        // Dapatkan elemen audio/video
+        const mediaElement = document.querySelector('audio, video');
+        
+        // Set volume ke 30%
+        mediaElement.volume = 0.3;
         
         // Header Scroll Effect
         window.addEventListener('scroll', function() {
